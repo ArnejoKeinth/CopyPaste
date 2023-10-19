@@ -1,7 +1,62 @@
-#Done! Congratulations on your new bot. You will find it at t.me/AceomBot. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.
+from Car import Car
 
-Use this token to access the HTTP API:
-6634820505:AAGzMtTaRfYNVxuJBETQJ-COFtOZNOEmspk
-Keep your token secure and store it safely, it can be used by anyone to control your bot.
+car_1 = Car("Chevy","Corvette",2021,"blue")
+car_2 = Car("Ford","Mustang",2022,"red")
 
-For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+car_1.drive()
+car_2.stop()
+
+class Car:
+
+    def __init__(self,make,model,year,color):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.color = color
+
+    def drive(self):
+        print("This "+self.model+" is driving")
+
+    def stop(self):
+        print("This "+self.model+" is stopped")
+
+
+
+
+class Animal:
+
+    alive = True
+
+    def eat(self):
+        print("This animal is eating")
+
+    def sleep(self):
+        print("This animal is sleeping")
+
+class Rabbit(Animal):
+
+    def run(self):
+        print("This rabbit is running")
+
+class Fish(Animal):
+
+    def swim(self):
+        print("This fish is swimming")
+
+class Hawk(Animal):
+
+    def fly(self):
+        print("This hawk is flying")
+
+
+rabbit = Rabbit()
+fish = Fish()
+hawk = Hawk()
+
+print(rabbit.alive)
+fish.eat()
+hawk.sleep()
+
+rabbit.run()
+fish.swim()
+hawk.fly()
