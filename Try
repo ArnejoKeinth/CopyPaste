@@ -1,62 +1,113 @@
-from Car import Car
+ 
+@media (min-width: 50px) and (max-width: 576px) {
+    .suggestions {
+        flex-direction: column;
+        align-items: center;
+    }
 
-car_1 = Car("Chevy","Corvette",2021,"blue")
-car_2 = Car("Ford","Mustang",2022,"red")
+    .suggestion-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+        flex-grow: 1;
+    }
 
-car_1.drive()
-car_2.stop()
+    .header-title h2 {
+        font-size: 24px;
+        margin-top: 30px;
+    }
 
-class Car:
+    .search-input {
+        width: 100%;
+    }
 
-    def __init__(self,make,model,year,color):
-        self.make = make
-        self.model = model
-        self.year = year
-        self.color = color
+    .menu li {
+        margin-right: 10px;
+    }
 
-    def drive(self):
-        print("This "+self.model+" is driving")
+    .logo img {
+        height: 20px;
+        margin-right: 6px;
+    }
 
-    def stop(self):
-        print("This "+self.model+" is stopped")
-
-
-
-
-class Animal:
-
-    alive = True
-
-    def eat(self):
-        print("This animal is eating")
-
-    def sleep(self):
-        print("This animal is sleeping")
-
-class Rabbit(Animal):
-
-    def run(self):
-        print("This rabbit is running")
-
-class Fish(Animal):
-
-    def swim(self):
-        print("This fish is swimming")
-
-class Hawk(Animal):
-
-    def fly(self):
-        print("This hawk is flying")
+    .auth-button {
+        font-size: 8px;
+    }
+}
 
 
-rabbit = Rabbit()
-fish = Fish()
-hawk = Hawk()
+@media (min-width: 577px) and (max-width: 768px) {
+    .suggestion-item {
+        margin-right: 2%;
+        flex-grow: 0;
+    }
 
-print(rabbit.alive)
-fish.eat()
-hawk.sleep()
+    .header-title h2 {
+        font-size: 24px;
+        margin-top: 50px;
+    }
 
-rabbit.run()
-fish.swim()
-hawk.fly()
+    .menu li {
+        margin-right: 15px;
+    }
+
+    .logo img {
+        height: 30px;
+        margin-right: 8px;
+    }
+
+    .auth-button {
+        font-size: 10px;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .suggestion-item {
+        margin-right: 2%;
+        flex-grow: 0;
+    }
+
+    .header-title h2 {
+        font-size: 24px;
+        margin-top: 50px;
+    }
+
+    .menu li {
+        margin-right: 25px;
+    }
+
+    .logo img {
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .auth-button {
+        font-size: 14px;
+    }
+}
+
+
+@media (min-width: 993px) {
+    .suggestion-item {
+        margin-right: 1.5%;
+        flex-grow: 0;
+    }
+
+    .header-title h2 {
+        font-size: 24px;
+        margin-top: 50px;
+    }
+
+    .menu li {
+        margin-right: 30px;
+    }
+
+    .logo img {
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .auth-button {
+        font-size: 16px;
+    }
+}
