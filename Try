@@ -1,4 +1,82 @@
- 
+CLIENTS WINDOWS
+1ST WINDOWS:
+- The title for each clients windows was
+"ENTER YOU NAME"
+[Name input box]  [Accep button]
+
+- If all clients type their name and click "accept" button, then in the the host servers display box there should be a display text that says:
+(Client name) is ready
+(Client name) is ready
+(Client name) is ready
+
+
+2ND WINDOWS:
+- If a client click the accept button, the client windows will change to this:
+
+- Title of each clients windows is
+ "Client: (name of the client)"
+
+[Bid button] [Sell button]  [Time Left: (the time of the auction from the host)]
+
+                 Item for BIDDING:
+(Display box for all list of items that will be selled from all clients.)
+
+
+             Item you are SELLING:
+(Display box for all the items that you are selling.)
+
+
+                 Highest BIDDER:
+(Display box for who is the highest bidder for each item in the auction list.)
+
+Reminders:
+- The Auction will not start if the "Host server didn't click the start button".
+- The "Bid and Sell" button will not be clickable if the host server doesn't start the auctions or click the start button.
+
+
+3RD WINDOWS:
+- If the host server click "Start" button, the input time will start and the "Bid and Sell" button from the Clients Windows will be clickable/accessible.
+
+- If any clients click the "Sell" button, then the clients windows will add a new windows name "SELLING" that look like this:
+
+-Title of the windows "SELLING"
+
+Item: [Input box]  Price: [Input box]     [Accept button]
+
+- If the clients (seller) click the "accept" button, the new windows "Selling" will be closed and the host server will be notified and display a text of:
+Examples;(John Wick is the seller)
+
+Selling: House Php 500 [John Wick]
+Selling: Shoes Php 250 [John Wick]
+
+- but for all clients except for the "Seller", the text will be display to the "Item for BIDDING".
+Examples;
+                  Item for BIDDING:
+House, 500[John Wick]
+Shoes, 250[John Wick]
+
+- but for the Seller(John Wick), the text will be display into "Item you are SELLING"  display box.
+Examples;
+House Php500
+Shoes Php250
+
+
+
+- If the clients(Thor) click the items(House) listed in the "Item for BIDDING"  and click the "Bid" button, there will be a new windows "BIDDING".
+- In the new windows "BIDDING", is look likes this:
+
+Title of the windows "Bidding"
+
+House:[Input box]  [Accept button]
+
+
+
+
+
+
+
+
+
 @media (min-width: 50px) and (max-width: 576px) {
     .suggestions {
         flex-direction: column;
