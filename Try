@@ -1,3 +1,21 @@
+HOST WINDOWS
+- The server is hosted in a computer no.1 but the clients is implemented in a network environment.
+- So if the auctions have 3 clients, then there there a 4 computers. 1 for the host server and 3 for the clients. 
+- They are connected using multithreaded LAN-compatible using Python Publish-Subscribe model
+
+The host server window has:
+
+Countdown(Second): [This is the input box]    [Start button] [Close Button]
+
+
+* Countdown input - it is the area where the user(server) has to put the time(in seconds format) for a single auctions. 
+
+* Start Button - button to start the time of an auction
+
+*Close Button - to close the auction window (server and the client windows) 
+
+
+
 CLIENTS WINDOWS
 1ST WINDOWS:
 - The title for each clients windows was
