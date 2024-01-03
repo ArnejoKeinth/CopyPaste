@@ -1,209 +1,39 @@
-HOST WINDOWS
-- The server is hosted in a computer no.1 but the clients is implemented in a network environment.
-- So if the auctions have 3 clients, then there there a 4 computers. 1 for the host server and 3 for the clients. 
-- They are connected using multithreaded LAN-compatible using Python Publish-Subscribe model
+## Starbucks Drink Delights: Hot, Cold, and Fruity with Prices! ☕️❄️
 
-The host server window has:
+**Hot Drinks:**
 
-Countdown(Second): [This is the input box]    [Start button] [Close Button]
+1. **Caffè Mocha (Tall):** ₱185, Rich espresso meets steamed milk and decadent chocolate for a classic warm hug in a mug. (☕ Chocolatey, Sweet, Warming)
+[Image of Caffè Mocha Starbucks]
+2. **Chai Latte (Tall):** ₱170, Spicy and aromatic chai tea infused with creamy milk, perfect for a cozy autumn or winter treat. (☕ Spicy, Sweet, Warming)
+[Image of Chai Latte Starbucks]
+3. **Peppermint White Hot Chocolate (Tall):** ₱190, A seasonal favorite, this creamy white chocolate drink is infused with peppermint for a festive and refreshing twist. (☕ Seasonal, Sweet, Minty)
+[Image of Peppermint White Hot Chocolate Starbucks]
 
+**Cold Drinks:**
 
-* Countdown input - it is the area where the user(server) has to put the time(in seconds format) for a single auctions. 
+1. **Cold Brew (Tall):** ₱125, Smooth and bold cold brew coffee, perfect for a caffeine kick without the heat. (❄️ Caffeine-free, Strong Coffee, Refreshing)
+[Image of Cold Brew Starbucks]
+2. **Vanilla Sweet Cream Cold Brew (Tall):** ₱190, Cold brew coffee infused with sweet cream for a touch of vanilla magic. (❄️ Sweet, Creamy, Coffee)
+[Image of Vanilla Sweet Cream Cold Brew Starbucks]
+3. **Nitro Cold Brew (Tall):** ₱170, Nitrogen-infused cold brew coffee for a creamy, cascading texture and rich coffee taste. (❄️ Caffeine-free, Smooth Coffee, Refreshing)
+[Image of Nitro Cold Brew Starbucks]
 
-* Start Button - button to start the time of an auction
+**Fruity Drinks:**
 
-*Close Button - to close the auction window (server and the client windows) 
+1. **Mango Passion Fruit Frappuccino (Tall):** ₱190, Creamy mango and tart passion fruit blended with ice for a tropical taste sensation. ( Sweet, Fruity, Creamy)
+[Image of Mango Passion Fruit Frappuccino Starbucks]
+2. **Strawberry Acai Refreshers (Tall):** ₱170, Açaí, strawberries, and a touch of lime blended with ice for a refreshing and antioxidant-packed drink. ( Sweet, Tart, Refreshing)
+[Image of Strawberry Acai Refreshers Starbucks]
+3. **Dragon Drink Refresher (Tall):** ₱170, A vibrant blend of passionfruit, mango, and coconut milk with a lime splash for a taste of the tropics. ( Sweet, Tropical, Refreshing)
+[Image of Dragon Drink Refresher Starbucks]
 
+**Bonus Tags:**
 
+* **Dairy-free:** Many drinks can be made dairy-free with alternative milk options like oat milk or almond milk.
+* **Customizable:** Most drinks can be customized with different syrups, toppings, and milk options to suit your taste.
+* **Seasonal:** Some drinks, like the Peppermint White Hot Chocolate, are only available for a limited time.
 
-CLIENTS WINDOWS
-1ST WINDOWS:
-- The title for each clients windows was
-"ENTER YOU NAME"
-[Name input box]  [Accep button]
+**Please note:** Prices may vary depending on the location of the Starbucks store.
 
-- If all clients type their name and click "accept" button, then in the the host servers display box there should be a display text that says:
-(Client name) is ready
-(Client name) is ready
-(Client name) is ready
+I hope this list sparks your next Starbucks adventure with the added bonus of knowing the costs! 
 
-
-2ND WINDOWS:
-- If a client click the accept button, the client windows will change to this:
-
-- Title of each clients windows is
- "Client: (name of the client)"
-
-[Bid button] [Sell button]  [Time Left: (the time of the auction from the host)]
-
-                 Item for BIDDING:
-(Display box for all list of items that will be selled from all clients.)
-
-
-             Item you are SELLING:
-(Display box for all the items that you are selling.)
-
-
-                 Highest BIDDER:
-(Display box for who is the highest bidder for each item in the auction list.)
-
-Reminders:
-- The Auction will not start if the "Host server didn't click the start button".
-- The "Bid and Sell" button will not be clickable if the host server doesn't start the auctions or click the start button.
-
-
-3RD WINDOWS:
-- If the host server click "Start" button, the input time will start and the "Bid and Sell" button from the Clients Windows will be clickable/accessible.
-
-- If any clients click the "Sell" button, then the clients windows will add a new windows name "SELLING" that look like this:
-
--Title of the windows "SELLING"
-
-Item: [Input box]  Price: [Input box]     [Accept button]
-
-- If the clients (seller) click the "accept" button, the new windows "Selling" will be closed and the host server will be notified and display a text of:
-Examples;(John Wick is the seller)
-
-Selling: House Php 500 [John Wick]
-Selling: Shoes Php 250 [John Wick]
-
-- but for all clients except for the "Seller", the text will be display to the "Item for BIDDING".
-Examples;
-                  Item for BIDDING:
-House, 500[John Wick]
-Shoes, 250[John Wick]
-
-- but for the Seller(John Wick), the text will be display into "Item you are SELLING"  display box.
-Examples;
-House Php500
-Shoes Php250
-
-
-
-- If the clients(Thor) click the items(House) listed in the "Item for BIDDING"  and click the "Bid" button, there will be a new windows "BIDDING".
-- In the new windows "BIDDING", is look likes this:
-
-Title of the windows "Bidding"
-
-House:[Input box]  [Accept button]
-
-
-
-
-
-
-
-
-
-@media (min-width: 50px) and (max-width: 576px) {
-    .suggestions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .suggestion-item {
-        margin-right: 0;
-        margin-bottom: 10px;
-        flex-grow: 1;
-    }
-
-    .header-title h2 {
-        font-size: 24px;
-        margin-top: 30px;
-    }
-
-    .search-input {
-        width: 100%;
-    }
-
-    .menu li {
-        margin-right: 10px;
-    }
-
-    .logo img {
-        height: 20px;
-        margin-right: 6px;
-    }
-
-    .auth-button {
-        font-size: 8px;
-    }
-}
-
-
-@media (min-width: 577px) and (max-width: 768px) {
-    .suggestion-item {
-        margin-right: 2%;
-        flex-grow: 0;
-    }
-
-    .header-title h2 {
-        font-size: 24px;
-        margin-top: 50px;
-    }
-
-    .menu li {
-        margin-right: 15px;
-    }
-
-    .logo img {
-        height: 30px;
-        margin-right: 8px;
-    }
-
-    .auth-button {
-        font-size: 10px;
-    }
-}
-
-
-@media (min-width: 769px) and (max-width: 992px) {
-    .suggestion-item {
-        margin-right: 2%;
-        flex-grow: 0;
-    }
-
-    .header-title h2 {
-        font-size: 24px;
-        margin-top: 50px;
-    }
-
-    .menu li {
-        margin-right: 25px;
-    }
-
-    .logo img {
-        height: 40px;
-        margin-right: 10px;
-    }
-
-    .auth-button {
-        font-size: 14px;
-    }
-}
-
-
-@media (min-width: 993px) {
-    .suggestion-item {
-        margin-right: 1.5%;
-        flex-grow: 0;
-    }
-
-    .header-title h2 {
-        font-size: 24px;
-        margin-top: 50px;
-    }
-
-    .menu li {
-        margin-right: 30px;
-    }
-
-    .logo img {
-        height: 40px;
-        margin-right: 10px;
-    }
-
-    .auth-button {
-        font-size: 16px;
-    }
-}
