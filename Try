@@ -1,3 +1,10 @@
+# class Checkout(BaseModel)
+#     item = models.ForeignKey(Inventory)
+#     user = models.ForeignKey(User)
+#     checked_out = models.DateTimeField()
+#     checked_in = models.DateTimeField(null=True)
+
+
 ## Starbucks Drink Delights: Hot, Cold, and Fruity with Prices! ☕️❄️
 
 **Hot Drinks:**
