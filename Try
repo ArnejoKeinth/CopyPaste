@@ -33,8 +33,7 @@ ADD COLUMN res_address_id INT NULL,
 ADD COLUMN perm_address_id INT NULL,
 ADD CONSTRAINT fk_employees_res_address 
 FOREIGN KEY (res_address_id)
-REFERENCES addresses (id_addresses);
-
+REFERENCES addresses (id_addresses)
 ADD CONSTRAINT fk_employees_perm_address
 FOREIGN KEY (perm_address_id)
 REFERENCES addresses (id_addresses);
@@ -114,7 +113,6 @@ VALUES
 
 ALTER TABLE relatives
 MODIFY COLUMN name_extension VARCHAR(15) NOT NULL DEFAULT 'not applicable';
-
 INSERT INTO relatives (idrelatives, first_name, middle_name, last_name, Occupation, Emp_business, telephone, birthdate, address_id)
 VALUES 
 (1, 'Juan', 'Dela Cruz', 'Santos', 'Teacher', 'ABC Corporation', '123-4567', '1980-05-15', 1),
@@ -212,7 +210,6 @@ VALUES
 (3, 3, 92.3, '2023-09-10', 'Quezon City', '98765', '2024-09-10', 3),
 (4, 4, 85.6, '2023-11-25', 'Davao City', '56789', '2024-11-25', 4),
 (5, 5, 91.0, '2023-12-30', 'Makati', '13579', '2024-12-30', 5);
-
 
 
 
