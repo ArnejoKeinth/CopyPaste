@@ -1,8 +1,45 @@
+[]NORMALIZATION:
+
+CREATE TABLE addresses (
+id_addresses INT NOT NULL,
+spec_address VARCHAR(45) NULL,
+street_address  VARCHAR(45) NULL,
+vill_address VARCHAR(45) NULL,
+barangay_address VARCHAR(45) NOT NULL,
+city VARCHAR(45) NOT NULL,
+municipality VARCHAR(45) NOT NULL,
+province VARCHAR(45) NOT NULL,
+zipcode VARCHAR(45) NOT NULL,
+PRIMARY KEY (id_addresses));
+
+ALTER TABLE employees
+DROP COLUMN res_spec_address,
+DROP COLUMN res_street_address,
+DROP COLUMN res_vill_address,
+DROP COLUMN res_barangay_address,
+DROP COLUMN res_city,
+DROP COLUMN res_municipality,
+DROP COLUMN res_province,
+DROP COLUMN res_zipcode,
+DROP COLUMN perm_spec_address,
+DROP COLUMN perm_street_address,
+DROP COLUMN perm_vill_address,
+DROP COLUMN perm_barangay_address,
+DROP COLUMN perm_city,
+DROP COLUMN perm_municipality,
+DROP COLUMN perm_province,
+DROP COLUMN perm_zipcode,
+ADD COLUMN res_address_id INT NULL,
+ADD COLUMN perm_address_id INT NULL,
+ADD CONSTRAINT fk_employees_res_address 
+FOREIGN KEY (res_address_id)
+REFERENCES addresses (id_addresses);
+
 ADD CONSTRAINT fk_employees_perm_address
 FOREIGN KEY (perm_address_id)
 REFERENCES addresses (id_addresses);
 
-ALTER TABLE Relatives
+ALTER TABLE relatives
 DROP COLUMN business_address,
 ADD COLUMN address_id INT NULL,
 ADD CONSTRAINT fk_relatives_address
@@ -14,3 +51,225 @@ ADD COLUMN address_id INT NULL,
 ADD CONSTRAINT fk_employees_prof_eligibility_address
 FOREIGN KEY (address_id)
 REFERENCES addresses (id_addresses);
+
+
+
+[]ADDING RECORDS:
+
+INSERT INTO addresses (id_addresses, spec_address, street_address, vill_address, barangay_address, city, municipality, province, zipcode)
+VALUES 
+(1, 'Unit 101', 'Brgy. Poblacion', 'Kanto St.', 'Brgy. Poblacion', 'Makati', 'Makati City', 'Metro Manila', '1234'),
+(2, 'Bahay ni Juan', 'Jupiter St.', 'San Lorenzo Village', 'San Lorenzo', 'Makati', 'Makati City', 'Metro Manila', '1235'),
+(3, 'Pulo ng Puso', 'Brgy. Dalisay', 'Calle Uno', 'Brgy. Dalisay', 'Quezon City', 'Quezon City', 'Metro Manila', '1100'),
+(4, 'Tahanan ni Maria', 'Avenida St.', 'Barangay Dos', 'Barangay Dos', 'Caloocan', 'Caloocan City', 'Metro Manila', '1400'),
+(5, 'Banyo ni Pedro', 'Brgy. Sampaguita', 'Maharlika St.', 'Brgy. Sampaguita', 'Davao', 'Davao City', 'Davao Del Sur', '8000');
+
+
+INSERT INTO job_positions (idjob_positions, job_category, Job_description)
+VALUES 
+(1, 'IT', 'Software Developer'),
+(2, 'HR', 'HR Manager'),
+(3, 'Finance', 'Accountant'),
+(4, 'Marketing', 'Marketing Specialist'),
+(5, 'Operations', 'Operations Manager');
+
+
+INSERT INTO contract_types (idcontract_types, contract_classification, contract_description)
+VALUES 
+(1, 'Permanent', 'Permanent Employee'),
+(2, 'Temporary', 'Temporary Employee');
+
+
+INSERT INTO institutions (idinstitutions, institution_name)
+VALUES 
+(1, 'University of the Philippines'),
+(2, 'Ateneo de Manila University'),
+(3, 'De La Salle University'),
+(4, 'University of Santo Tomas'),
+(5, 'Polytechnic University of the Philippines');
+
+
+INSERT INTO departments (iddepartments, dept_name)
+VALUES 
+(1, 'IT Department'),
+(2, 'HR Department'),
+(3, 'Finance Department'),
+(4, 'Marketing Department'),
+(5, 'Operations Department'),
+(6, 'Legal Department'),
+(7, 'Research Department'),
+(8, 'Development Department'),
+(9, 'Sales Department'),
+(10, 'Customer Service Department');
+
+
+INSERT INTO employees (idemployees, first_name, middle_name, last_name, name_extension, birthdate, birth_city, birth_province, birth_country, sex, civil_status, height_in_meter, weight_in_kg, contactno, blood_type, gsis_no, sss_no, philhealthno, tin, employee_no, citizenship, telephone, mobile_no, email, Q34A, Q34B, Q34_details, Q35a, Q35b, Q35_details, Q36, Q36_details, Q37, Q37_details, Q38a, Q38b, Q38_details, Q39a, Q39b, Q39_details, Q40a, Q40a_details, Q40b, Q40b_details, Q40c, Q40c_details, res_address_id, perm_address_id)
+VALUES 
+(1, 'Juan', 'Cruz', 'Dela Cruz', 'Jr.', '1985-01-15', 'Manila', 'Metro Manila', 'Philippines', 'Male', 'Single', 1.75, 70, '09171234567', 'O+', '123456789', '987654321', '123123123', '987987987', 1001, 'Filipino', '028765432', '09171234567', 'juan.delacruz@example.com', 1, 0, NULL, 1, 0, NULL, 'Yes', 'None', 0, NULL, 0, 0, NULL, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, NULL, NULL),
+(2, 'Maria', 'Santos', 'Reyes', NULL, '1990-02-20', 'Quezon City', 'Metro Manila', 'Philippines', 'Female', 'Married', 1.65, 55, '09181234567', 'A+', '223456789', '887654321', '223123123', '887987987', 1002, 'Filipino', '029876543', '09181234567', 'maria.reyes@example.com', 0, 1, NULL, 1, 0, NULL, 'No', NULL, 0, NULL, 0, 0, NULL, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, NULL, NULL),
+(3, 'Jose', 'Gonzales', 'Garcia', NULL, '1987-03-25', 'Cebu City', 'Cebu', 'Philippines', 'Male', 'Single', 1.70, 68, '09191234567', 'B+', '323456789', '787654321', '323123123', '787987987', 1003, 'Filipino', '021234567', '09191234567', 'jose.garcia@example.com', 1, 0, NULL, 1, 1, NULL, 'Yes', 'None', 0, NULL, 0, 0, NULL, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, NULL, NULL),
+(4, 'Ana', 'Martinez', 'Lopez', NULL, '1992-04-30', 'Davao City', 'Davao del Sur', 'Philippines', 'Female', 'Single', 1.60, 50, '09101234567', 'AB+', '423456789', '687654321', '423123123', '687987987', 1004, 'Filipino', '022345678', '09101234567', 'ana.lopez@example.com', 0, 1, NULL, 0, 1, NULL, 'No', NULL, 0, NULL, 0, 0, NULL, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, NULL, NULL),
+(5, 'Pedro', 'Ramos', 'Santos', 'Sr.', '1989-05-10', 'Baguio City', 'Benguet', 'Philippines', 'Male', 'Married', 1.80, 75, '09111234567', 'O-', '523456789', '587654321', '523123123', '587987987', 1005, 'Filipino', '023456789', '09111234567', 'pedro.santos@example.com', 1, 0, NULL, 1, 0, NULL, 'Yes', 'None', 0, NULL, 0, 0, NULL, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, NULL, NULL);
+
+
+ALTER TABLE relatives
+MODIFY COLUMN name_extension VARCHAR(15) NOT NULL DEFAULT 'not applicable';
+
+INSERT INTO relatives (idrelatives, first_name, middle_name, last_name, Occupation, Emp_business, telephone, birthdate, address_id)
+VALUES 
+(1, 'Juan', 'Dela Cruz', 'Santos', 'Teacher', 'ABC Corporation', '123-4567', '1980-05-15', 1),
+(2, 'Maria', 'Teresa', 'Garcia', 'Engineer', 'XYZ Solutions', '234-5678', '1975-10-20', 2),
+(3, 'Jose', 'Rizal', 'Lopez', 'Doctor', 'Medical Center', '345-6789', '1990-02-28', 3),
+(4, 'Juanito', 'Santos', 'Aquino', 'Nurse', 'City Hospital', '456-7890', '1982-09-12', 4),
+(5, 'Maria', 'Clara', 'Lim', 'Accountant', 'Financial Services', '567-8901', '1988-07-03', 5);
+
+
+INSERT INTO employees_relatives (Relatives_idrelatives, employees_idemployees, relationship)
+VALUES 
+(1, 1, 'Father'),
+(2, 2, 'Mother'),
+(3, 3, 'Uncle'),
+(4, 4, 'Aunt'),
+(5, 5, 'Grandfather');
+
+
+INSERT INTO service_records (employees_idemployees, job_positions_idjob_positions, appointment_start_date, appointment_end_date, institutions_idinstitutions, monthly_salary, pay_grade, contract_types_idcontract_types, gov_service)
+VALUES 
+(1, 1, '2010-01-01', '2015-12-31', 1, 50000, 'SG 15', 1, 1),
+(1, 2, '2016-01-01', '2024-05-28', 2, 60000, 'SG 18', 1, 1),
+(2, 2, '2012-02-01', '2017-12-31', 3, 55000, 'SG 16', 1, 1),
+(2, 3, '2018-01-01', '2024-05-28', 4, 65000, 'SG 19', 1, 1),
+(3, 3, '2011-03-01', '2016-12-31', 5, 60000, 'SG 17', 1, 1),
+(3, 4, '2017-01-01', '2024-05-28', 1, 70000, 'SG 20', 1, 1),
+(4, 4, '2013-04-01', '2018-12-31', 2, 58000, 'SG 17', 1, 1),
+(4, 5, '2019-01-01', '2024-05-28', 3, 68000, 'SG 19', 1, 1),
+(5, 5, '2010-05-01', '2015-12-31', 4, 62000, 'SG 18', 1, 1),
+(5, 1, '2016-01-01', '2024-05-28', 5, 72000, 'SG 21', 1, 1);
+
+
+INSERT INTO employees_unitassignments (employees_idemployees, departments_iddepartments, transfer_date)
+VALUES 
+(1, 1, '2010-01-01'),
+(1, 2, '2012-01-01'),
+(2, 2, '2012-02-01'),
+(2, 3, '2016-01-01'),
+(3, 3, '2011-03-01'),
+(3, 4, '2017-01-01'),
+(4, 4, '2013-04-01'),
+(4, 5, '2019-01-01'),
+(5, 5, '2010-05-01'),
+(5, 1, '2016-01-01');
+
+
+INSERT INTO employees_ext_involvements (employees_idemployees, institutions_idinstitutions, involvement_type, start_date, end_date, no_hours, work_nature)
+VALUES 
+(1, 1, 'Conference', '2022-01-10', '2022-01-12', 24, 'Attended as a guest speaker'),
+(2, 2, 'Workshop', '2022-02-05', '2022-02-06', 16, 'Participated as a panelist'),
+(3, 3, 'Seminar', '2022-03-20', '2022-03-22', 20, 'Presented paper on financial analysis'),
+(4, 4, 'Training', '2022-04-15', '2022-04-16', 16, 'Attended as a trainee'),
+(5, 5, 'Webinar', '2022-05-01', '2022-05-03', 24, 'Spoke on operations management best practices');
+
+
+INSERT INTO trainings (idtrainings, training_venue, training_type, start_date, end_date, training_title, institutions_idinstitutions)
+VALUES 
+(1, 'Manila Conference Center', 'Workshop', '2022-01-10', '2022-01-12', 'Leadership Development', 1),
+(2, 'Cebu Training Institute', 'Seminar', '2022-02-05', '2022-02-06', 'Project Management Essentials', 2),
+(3, 'Davao Convention Hall', 'Webinar', '2022-03-20', '2022-03-22', 'Digital Marketing Strategies', 3),
+(4, 'Quezon City Training Center', 'Training', '2022-04-15', '2022-04-16', 'Financial Analysis Techniques', 4),
+(5, 'Online Platform', 'Conference', '2022-05-01', '2022-05-03', 'Data Science Symposium', 5);
+
+
+INSERT INTO employees_has_trainings (employees_idemployees, trainings_idtrainings, participation_type)
+VALUES 
+(1, 1, 'Participant'),
+(1, 2, 'Observer'),
+(1, 3, 'Presenter'),
+(2, 4, 'Participant'),
+(2, 5, 'Participant'),
+(3, 1, 'Participant'),
+(3, 2, 'Presenter'),
+(3, 3, 'Participant'),
+(4, 4, 'Participant'),
+(4, 5, 'Participant'),
+(5, 1, 'Participant'),
+(5, 2, 'Participant'),
+(5, 3, 'Observer');
+
+
+INSERT INTO professional_exams (idprofessional_exams, Exam_description)
+VALUES 
+(1, 'Civil Service Exam'),
+(2, 'Certified Public Accountant (CPA) Board Exam'),
+(3, 'Bar Exam'),
+(4, 'Medical Board Exam'),
+(5, 'Engineering Licensure Exam');
+
+
+INSERT INTO employees_prof_eligibility (professional_exams_idprofessional_exams, employees_idemployees, rating, exam_date, exam_place, license_no, license_validity, address_id)
+VALUES 
+(1, 1, 90.5, '2023-05-15', 'Manila', '12345', '2024-05-15', 1),
+(2, 2, 88.7, '2023-07-20', 'Cebu', '54321', '2024-07-20', 2),
+(3, 3, 92.3, '2023-09-10', 'Quezon City', '98765', '2024-09-10', 3),
+(4, 4, 85.6, '2023-11-25', 'Davao City', '56789', '2024-11-25', 4),
+(5, 5, 91.0, '2023-12-30', 'Makati', '13579', '2024-12-30', 5);
+
+
+
+
+[]DISPLAY INFORMATIONS:
+
+SELECT CONCAT(employees.first_name, ' ', employees.last_name) AS full_name,
+       job_positions.Job_description AS current_job_position,
+       institutions.institution_name AS current_institution,
+       DATEDIFF(NOW(), service_records.appointment_start_date) / 365 AS years_in_institution
+FROM service_records
+JOIN employees ON service_records.employees_idemployees = employees.idemployees
+JOIN job_positions ON service_records.job_positions_idjob_positions = job_positions.idjob_positions
+JOIN institutions ON service_records.institutions_idinstitutions = institutions.idinstitutions
+WHERE DATEDIFF(NOW(), service_records.appointment_start_date) / 365 >= 5;
+
+
+SELECT 
+    CONCAT(employees.first_name, ' ', employees.middle_name, ' ', employees.last_name) AS full_name,
+    professional_exams.Exam_description AS eligibility_description,
+    trainings.training_title
+FROM 
+    employees
+JOIN 
+    employees_prof_eligibility 
+    ON employees.idemployees = employees_prof_eligibility.employees_idemployees
+JOIN 
+    professional_exams 
+    ON employees_prof_eligibility.professional_exams_idprofessional_exams = professional_exams.idprofessional_exams
+JOIN 
+    employees_has_trainings
+    ON employees.idemployees = employees_has_trainings.employees_idemployees
+JOIN 
+    trainings 
+    ON employees_has_trainings.trainings_idtrainings = trainings.idtrainings
+WHERE 
+    professional_exams.Exam_description = 'Civil Service Exam'
+    AND 
+    (trainings.training_title LIKE '%computer%' OR trainings.training_title LIKE '%IT%' OR trainings.training_title LIKE '%ICT%');
+
+
+SELECT professional_exams.Exam_description, COUNT(*) AS Total_passers
+FROM professional_exams
+JOIN employees_prof_eligibility 
+ON professional_exams.idprofessional_exams = employees_prof_eligibility.professional_exams_idprofessional_exams
+GROUP BY professional_exams.Exam_description;
+
+
+SELECT job_positions.Job_description, COUNT(*) AS total_employees
+FROM job_positions
+JOIN service_records 
+ON job_positions.idjob_positions = service_records.job_positions_idjob_positions
+WHERE service_records.appointment_end_date > NOW() OR service_records.appointment_end_date IS NULL
+GROUP BY job_positions.Job_description
+ORDER BY total_employees DESC
+LIMIT 1;
+
+
+SELECT civil_status, AVG(weight_in_kg) AS avg_weight
+FROM employees
+GROUP BY civil_status;
