@@ -1,11 +1,23 @@
-CREATE TABLE IF NOT EXISTS `addresses` (
-`id_addresses` INT NOT NULL,
-`spec_address` VARCHAR(45) NULL,
-`street_address` VARCHAR(45) NULL,
-`vill_address` VARCHAR(45) NULL,
-`barangay_address` VARCHAR(45) NOT NULL,
-`city` VARCHAR(45) NOT NULL,
-`municipality` VARCHAR(45) NOT NULL,
-`province` VARCHAR(45) NOT NULL,
-`zipcode` VARCHAR(45) NOT NULL,
-PRIMARY KEY (`id_addresses`));
+
+ALTER TABLE employees
+DROP COLUMN res_spec_address,
+DROP COLUMN res_street_address,
+DROP COLUMN res_vill_address,
+DROP COLUMN res_barangay_address,
+DROP COLUMN res_city,
+DROP COLUMN res_municipality,
+DROP COLUMN res_province,
+DROP COLUMN res_zipcode,
+DROP COLUMN perm_spec_address,
+DROP COLUMN perm_street_address,
+DROP COLUMN perm_vill_address,
+DROP COLUMN perm_barangay_address,
+DROP COLUMN perm_city,
+DROP COLUMN perm_municipality,
+DROP COLUMN perm_province,
+DROP COLUMN perm_zipcode,
+ADD COLUMN res_address_id INT NULL,
+ADD COLUMN perm_address_id INT NULL,
+ADD CONSTRAINT fk_employees_res_address 
+FOREIGN KEY (res_address_id)
+REFERENCES addresses (id_addresses)
