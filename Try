@@ -1,23 +1,16 @@
+ADD CONSTRAINT fk_employees_perm_address
+FOREIGN KEY (perm_address_id)
+REFERENCES addresses (id_addresses);
 
-ALTER TABLE employees
-DROP COLUMN res_spec_address,
-DROP COLUMN res_street_address,
-DROP COLUMN res_vill_address,
-DROP COLUMN res_barangay_address,
-DROP COLUMN res_city,
-DROP COLUMN res_municipality,
-DROP COLUMN res_province,
-DROP COLUMN res_zipcode,
-DROP COLUMN perm_spec_address,
-DROP COLUMN perm_street_address,
-DROP COLUMN perm_vill_address,
-DROP COLUMN perm_barangay_address,
-DROP COLUMN perm_city,
-DROP COLUMN perm_municipality,
-DROP COLUMN perm_province,
-DROP COLUMN perm_zipcode,
-ADD COLUMN res_address_id INT NULL,
-ADD COLUMN perm_address_id INT NULL,
-ADD CONSTRAINT fk_employees_res_address 
-FOREIGN KEY (res_address_id)
-REFERENCES addresses (id_addresses)
+ALTER TABLE Relatives
+DROP COLUMN business_address,
+ADD COLUMN address_id INT NULL,
+ADD CONSTRAINT fk_relatives_address
+FOREIGN KEY (address_id)
+REFERENCES addresses (id_addresses);
+
+ALTER TABLE employees_prof_eligibility
+ADD COLUMN address_id INT NULL,
+ADD CONSTRAINT fk_employees_prof_eligibility_address
+FOREIGN KEY (address_id)
+REFERENCES addresses (id_addresses);
