@@ -1,74 +1,11 @@
-# class Checkout(BaseModel)
-#     item = models.ForeignKey(Inventory)
-#     user = models.ForeignKey(User)
-#     checked_out = models.DateTimeField()
-#     checked_in = models.DateTimeField(null=True)
-
-
-## Starbucks Drink Delights: Hot, Cold, and Fruity with Prices! ☕️❄️
-
-**Hot Drinks:**
-
-1. **Caffè Mocha (Tall):** ₱185, Rich espresso meets steamed milk and decadent chocolate for a classic warm hug in a mug. (☕ Chocolatey, Sweet, Warming)
-[Image of Caffè Mocha Starbucks]
-2. **Chai Latte (Tall):** ₱170, Spicy and aromatic chai tea infused with creamy milk, perfect for a cozy autumn or winter treat. (☕ Spicy, Sweet, Warming)
-[Image of Chai Latte Starbucks]
-3. **Peppermint White Hot Chocolate (Tall):** ₱190, A seasonal favorite, this creamy white chocolate drink is infused with peppermint for a festive and refreshing twist. (☕ Seasonal, Sweet, Minty)
-[Image of Peppermint White Hot Chocolate Starbucks]
-
-**Cold Drinks:**
-
-1. Pistachio Cream Cold Brew (Tall): ₱190, Starbucks® signature cold brew sweetened with vanilla syrup, topped with silky pistachio cream cold foam and finished with salted brown-buttery sprinkles for a sweet and nutty treat. (❄️ Sweet, Creamy, Coffee, Nutty)
-2. **Vanilla Sweet Cream Cold Brew (Tall):** ₱190, Cold brew coffee infused with sweet cream for a touch of vanilla magic. (❄️ Sweet, Creamy, Coffee)
-[Image of Vanilla Sweet Cream Cold Brew Starbucks]
-3. **Nitro Cold Brew (Tall):** ₱170, Nitrogen-infused cold brew coffee for a creamy, cascading texture and rich coffee taste. (❄️ Caffeine-free, Smooth Coffee, Refreshing)
-[Image of Nitro Cold Brew Starbucks]
-
-**Fruity Drinks:**
-
-1. **Mango Passion Fruit Frappuccino (Tall):** ₱190, Creamy mango and tart passion fruit blended with ice for a tropical taste sensation. ( Sweet, Fruity, Creamy)
-[Image of Mango Passion Fruit Frappuccino Starbucks]
-2. **Strawberry Acai Refreshers (Tall):** ₱170, Açaí, strawberries, and a touch of lime blended with ice for a refreshing and antioxidant-packed drink. ( Sweet, Tart, Refreshing)
-[Image of Strawberry Acai Refreshers Starbucks]
-3. **Dragon Drink Refresher (Tall):** ₱170, A vibrant blend of passionfruit, mango, and coconut milk with a lime splash for a taste of the tropics. ( Sweet, Tropical, Refreshing)
-[Image of Dragon Drink Refresher Starbucks]
-
-
-
-
-
-## Starbucks Drink Delights: Hot, Cold, and Fruity with Prices and Ingredients! ☕️❄️
-
-**Hot Drinks:**
-
-1. **Caffè Mocha (Tall):** ₱185
-    * **Ingredients:** Espresso, steamed milk, mocha sauce, whipped cream.
-
-2. **Chai Latte (Tall):** ₱170
-    * **Ingredients:** Starbucks chai tea concentrate, steamed milk, sugar, cinnamon, ginger, cardamom, cloves, black pepper, whipped cream.
-
-3. **Peppermint White Hot Chocolate (Tall):** ₱190
-    * **Ingredients:** White chocolate mocha sauce, steamed milk, peppermint syrup, whipped cream, crushed peppermint candy.
-
-**Cold Drinks:**
-
-1. **Pistachio Cream Cold Brew (Tall):** ₱190
-    * **Ingredients:** Starbucks cold brew coffee, vanilla syrup, pistachio cream cold foam, salted brown-buttery sprinkles.
-
-2. **Vanilla Sweet Cream Cold Brew (Tall):** ₱190
-    * **Ingredients:** Starbucks cold brew coffee, vanilla sweet cream cold foam.
-
-3. **Nitro Cold Brew (Tall):** ₱170
-    * **Ingredients:** Starbucks cold brew coffee infused with nitrogen.
-
-**Fruity Drinks:**
-
-1. **Mango Passion Fruit Frappuccino (Tall):** ₱190
-    * **Ingredients:** Mango syrup, passion fruit syrup, ice, milk, Frappuccino base, whipped cream.
-
-2. **Strawberry Acai Refreshers (Tall):** ₱170
-    * **Ingredients:** Strawberry açaí base, ice, lime wedges, blackberries.
-
-3. **Dragon Drink Refresher (Tall):** ₱170
-    * **Ingredients:** Passionfruit-mango base, coconut milk, ice, lime wedges.
-
+CREATE TABLE IF NOT EXISTS `addresses` (
+`id_addresses` INT NOT NULL,
+`spec_address` VARCHAR(45) NULL,
+`street_address` VARCHAR(45) NULL,
+`vill_address` VARCHAR(45) NULL,
+`barangay_address` VARCHAR(45) NOT NULL,
+`city` VARCHAR(45) NOT NULL,
+`municipality` VARCHAR(45) NOT NULL,
+`province` VARCHAR(45) NOT NULL,
+`zipcode` VARCHAR(45) NOT NULL,
+PRIMARY KEY (`id_addresses`));
